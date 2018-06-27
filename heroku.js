@@ -4,8 +4,8 @@ var PORT = process.env.PORT || 3000;
 var bodyParser = require("body-parser");
 var path = require("path");
 
-var name = [];
-var date = [];
+var reservation = [];
+
 
 
 
@@ -31,6 +31,7 @@ app.get("/reserve", function(req, res) {
 app.get("/table", function(req, res) {
     res.sendFile(path.join(__dirname, "table.html"));
   });
+
 
 
 

@@ -5,12 +5,14 @@ var bodyParser = require("body-parser");
 var path = require("path");
 
 var reservation = [];
+var tables = 0;
 
 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 
 
 
@@ -31,6 +33,24 @@ app.get("/reserve", function(req, res) {
 app.get("/table", function(req, res) {
     res.sendFile(path.join(__dirname, "table.html"));
   });
+
+$('#click').click(function(e){
+  e.preventDefault();
+  tables++;
+
+
+if(tables > 5){
+  $('#reserve').text('sorry, nothing is available! Maybe next year');  
+}else{
+  $('#reserve').text('You should try the lottery, we have an opening!');
+}
+});
+
+
+
+
+
+
 
 
 
